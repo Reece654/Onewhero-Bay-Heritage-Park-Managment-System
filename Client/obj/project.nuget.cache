@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fZvnG8R4uvY=",
+  "dgSpecHash": "9MBMRoltNIQ=",
   "success": true,
-  "projectFilePath": "c:\\Users\\reece_hbdfrup\\source\\repos\\Onewhero Bay Heritage Park Managment System\\Client\\Onewhero Bay Heritage Park Managment System.Client.csproj",
+  "projectFilePath": "C:\\Users\\reece_hbdfrup\\source\\repos\\Onewhero Bay Heritage Park Managment System\\Client\\Onewhero Bay Heritage Park Managment System.Client.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\reece_hbdfrup\\.nuget\\packages\\microsoft.aspnetcore.authorization\\8.0.0\\microsoft.aspnetcore.authorization.8.0.0.nupkg.sha512",
     "C:\\Users\\reece_hbdfrup\\.nuget\\packages\\microsoft.aspnetcore.components\\8.0.0\\microsoft.aspnetcore.components.8.0.0.nupkg.sha512",
@@ -12,7 +12,6 @@
     "C:\\Users\\reece_hbdfrup\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\8.0.0\\microsoft.aspnetcore.components.webassembly.8.0.0.nupkg.sha512",
     "C:\\Users\\reece_hbdfrup\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.devserver\\8.0.0\\microsoft.aspnetcore.components.webassembly.devserver.8.0.0.nupkg.sha512",
     "C:\\Users\\reece_hbdfrup\\.nuget\\packages\\microsoft.aspnetcore.metadata\\8.0.0\\microsoft.aspnetcore.metadata.8.0.0.nupkg.sha512",
-    "C:\\Users\\reece_hbdfrup\\.nuget\\packages\\microsoft.codecoverage\\17.9.0\\microsoft.codecoverage.17.9.0.nupkg.sha512",
     "C:\\Users\\reece_hbdfrup\\.nuget\\packages\\microsoft.extensions.configuration\\8.0.0\\microsoft.extensions.configuration.8.0.0.nupkg.sha512",
     "C:\\Users\\reece_hbdfrup\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\8.0.0\\microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\reece_hbdfrup\\.nuget\\packages\\microsoft.extensions.configuration.binder\\8.0.0\\microsoft.extensions.configuration.binder.8.0.0.nupkg.sha512",
@@ -27,50 +26,13 @@
     "C:\\Users\\reece_hbdfrup\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0\\microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\reece_hbdfrup\\.nuget\\packages\\microsoft.extensions.options\\8.0.0\\microsoft.extensions.options.8.0.0.nupkg.sha512",
     "C:\\Users\\reece_hbdfrup\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
-    "C:\\Users\\reece_hbdfrup\\.nuget\\packages\\microsoft.identitymodel.abstractions\\7.5.1\\microsoft.identitymodel.abstractions.7.5.1.nupkg.sha512",
-    "C:\\Users\\reece_hbdfrup\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\7.5.1\\microsoft.identitymodel.jsonwebtokens.7.5.1.nupkg.sha512",
-    "C:\\Users\\reece_hbdfrup\\.nuget\\packages\\microsoft.identitymodel.logging\\7.5.1\\microsoft.identitymodel.logging.7.5.1.nupkg.sha512",
-    "C:\\Users\\reece_hbdfrup\\.nuget\\packages\\microsoft.identitymodel.tokens\\7.5.1\\microsoft.identitymodel.tokens.7.5.1.nupkg.sha512",
-    "C:\\Users\\reece_hbdfrup\\.nuget\\packages\\microsoft.io.recyclablememorystream\\3.0.0\\microsoft.io.recyclablememorystream.3.0.0.nupkg.sha512",
     "C:\\Users\\reece_hbdfrup\\.nuget\\packages\\microsoft.jsinterop\\8.0.0\\microsoft.jsinterop.8.0.0.nupkg.sha512",
     "C:\\Users\\reece_hbdfrup\\.nuget\\packages\\microsoft.jsinterop.webassembly\\8.0.0\\microsoft.jsinterop.webassembly.8.0.0.nupkg.sha512",
     "C:\\Users\\reece_hbdfrup\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.20\\microsoft.net.illink.tasks.8.0.20.nupkg.sha512",
     "C:\\Users\\reece_hbdfrup\\.nuget\\packages\\microsoft.net.sdk.webassembly.pack\\9.0.9\\microsoft.net.sdk.webassembly.pack.9.0.9.nupkg.sha512",
-    "C:\\Users\\reece_hbdfrup\\.nuget\\packages\\microsoft.net.test.sdk\\17.9.0\\microsoft.net.test.sdk.17.9.0.nupkg.sha512",
-    "C:\\Users\\reece_hbdfrup\\.nuget\\packages\\microsoft.testplatform.objectmodel\\17.9.0\\microsoft.testplatform.objectmodel.17.9.0.nupkg.sha512",
-    "C:\\Users\\reece_hbdfrup\\.nuget\\packages\\microsoft.testplatform.testhost\\17.9.0\\microsoft.testplatform.testhost.17.9.0.nupkg.sha512",
-    "C:\\Users\\reece_hbdfrup\\.nuget\\packages\\mimemapping\\3.0.1\\mimemapping.3.0.1.nupkg.sha512",
-    "C:\\Users\\reece_hbdfrup\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
-    "C:\\Users\\reece_hbdfrup\\.nuget\\packages\\supabase\\1.0.0\\supabase.1.0.0.nupkg.sha512",
-    "C:\\Users\\reece_hbdfrup\\.nuget\\packages\\supabase.core\\1.0.0\\supabase.core.1.0.0.nupkg.sha512",
-    "C:\\Users\\reece_hbdfrup\\.nuget\\packages\\supabase.functions\\2.0.0\\supabase.functions.2.0.0.nupkg.sha512",
-    "C:\\Users\\reece_hbdfrup\\.nuget\\packages\\supabase.gotrue\\5.0.0\\supabase.gotrue.5.0.0.nupkg.sha512",
-    "C:\\Users\\reece_hbdfrup\\.nuget\\packages\\supabase.postgrest\\4.0.0\\supabase.postgrest.4.0.0.nupkg.sha512",
-    "C:\\Users\\reece_hbdfrup\\.nuget\\packages\\supabase.realtime\\7.0.0\\supabase.realtime.7.0.0.nupkg.sha512",
-    "C:\\Users\\reece_hbdfrup\\.nuget\\packages\\supabase.storage\\2.0.0\\supabase.storage.2.0.0.nupkg.sha512",
-    "C:\\Users\\reece_hbdfrup\\.nuget\\packages\\system.identitymodel.tokens.jwt\\7.5.1\\system.identitymodel.tokens.jwt.7.5.1.nupkg.sha512",
     "C:\\Users\\reece_hbdfrup\\.nuget\\packages\\system.io.pipelines\\8.0.0\\system.io.pipelines.8.0.0.nupkg.sha512",
-    "C:\\Users\\reece_hbdfrup\\.nuget\\packages\\system.net.http.json\\8.0.0\\system.net.http.json.8.0.0.nupkg.sha512",
-    "C:\\Users\\reece_hbdfrup\\.nuget\\packages\\system.reactive\\6.0.0\\system.reactive.6.0.0.nupkg.sha512",
-    "C:\\Users\\reece_hbdfrup\\.nuget\\packages\\system.reflection.metadata\\1.6.0\\system.reflection.metadata.1.6.0.nupkg.sha512",
     "C:\\Users\\reece_hbdfrup\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512",
-    "C:\\Users\\reece_hbdfrup\\.nuget\\packages\\system.text.json\\8.0.0\\system.text.json.8.0.0.nupkg.sha512",
-    "C:\\Users\\reece_hbdfrup\\.nuget\\packages\\system.threading.channels\\8.0.0\\system.threading.channels.8.0.0.nupkg.sha512",
-    "C:\\Users\\reece_hbdfrup\\.nuget\\packages\\websocket.client\\5.1.1\\websocket.client.5.1.1.nupkg.sha512"
+    "C:\\Users\\reece_hbdfrup\\.nuget\\packages\\system.text.json\\8.0.0\\system.text.json.8.0.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1603",
-      "level": "Warning",
-      "message": "Onewhero Bay Heritage Park Managment System.Client depends on Supabase (>= 0.14.0) but Supabase 0.14.0 was not found. Supabase 1.0.0 was resolved instead.",
-      "projectPath": "c:\\Users\\reece_hbdfrup\\source\\repos\\Onewhero Bay Heritage Park Managment System\\Client\\Onewhero Bay Heritage Park Managment System.Client.csproj",
-      "warningLevel": 1,
-      "filePath": "c:\\Users\\reece_hbdfrup\\source\\repos\\Onewhero Bay Heritage Park Managment System\\Client\\Onewhero Bay Heritage Park Managment System.Client.csproj",
-      "libraryId": "Supabase",
-      "targetGraphs": [
-        "net8.0",
-        "net8.0/browser-wasm"
-      ]
-    }
-  ]
+  "logs": []
 }

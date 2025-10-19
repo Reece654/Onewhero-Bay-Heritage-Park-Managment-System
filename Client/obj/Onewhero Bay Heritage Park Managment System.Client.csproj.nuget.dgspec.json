@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\reece_hbdfrup\\source\\repos\\Onewhero Bay Heritage Park Managment System\\Client\\Onewhero Bay Heritage Park Managment System.Client.csproj": {}
+    "C:\\Users\\reece_hbdfrup\\source\\repos\\Onewhero Bay Heritage Park Managment System\\Client\\Onewhero Bay Heritage Park Managment System.Client.csproj": {}
   },
   "projects": {
-    "c:\\Users\\reece_hbdfrup\\source\\repos\\Onewhero Bay Heritage Park Managment System\\Client\\Onewhero Bay Heritage Park Managment System.Client.csproj": {
+    "C:\\Users\\reece_hbdfrup\\source\\repos\\Onewhero Bay Heritage Park Managment System\\Client\\Onewhero Bay Heritage Park Managment System.Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\reece_hbdfrup\\source\\repos\\Onewhero Bay Heritage Park Managment System\\Client\\Onewhero Bay Heritage Park Managment System.Client.csproj",
+        "projectUniqueName": "C:\\Users\\reece_hbdfrup\\source\\repos\\Onewhero Bay Heritage Park Managment System\\Client\\Onewhero Bay Heritage Park Managment System.Client.csproj",
         "projectName": "Onewhero Bay Heritage Park Managment System.Client",
-        "projectPath": "c:\\Users\\reece_hbdfrup\\source\\repos\\Onewhero Bay Heritage Park Managment System\\Client\\Onewhero Bay Heritage Park Managment System.Client.csproj",
+        "projectPath": "C:\\Users\\reece_hbdfrup\\source\\repos\\Onewhero Bay Heritage Park Managment System\\Client\\Onewhero Bay Heritage Park Managment System.Client.csproj",
         "packagesPath": "C:\\Users\\reece_hbdfrup\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\reece_hbdfrup\\source\\repos\\Onewhero Bay Heritage Park Managment System\\Client\\obj\\",
+        "outputPath": "C:\\Users\\reece_hbdfrup\\source\\repos\\Onewhero Bay Heritage Park Managment System\\Client\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -71,14 +71,6 @@
               "target": "Package",
               "version": "[9.0.9, )",
               "autoReferenced": true
-            },
-            "Supabase": {
-              "target": "Package",
-              "version": "[0.14.0, )"
-            },
-            "System.Net.Http.Json": {
-              "target": "Package",
-              "version": "[8.0.0, )"
             }
           },
           "imports": [
