@@ -1,0 +1,47 @@
+@page "/login"
+@using Onewhero_Bay_Heritage_Park_Managment_System.Client.Services
+@inject AuthService AuthService
+@inject NavigationManager Navigation
+
+<h1>Login</h1>
+
+<div>
+    <label>Email:</label>
+    <input type="email" @bind="email" />
+</div>
+
+<div>
+    <label>Password:</label>
+    <input type="password" @bind="password" />
+</div>
+
+<button @onclick="LoginUser">Login</button>
+
+@* Show error message if login fails *@
+@if (!string.IsNullOrEmpty(message))
+{
+    <p>@message</p>
+}
+
+<p><a href="/register">Don't have an account? Register here</a></p>
+
+@code {
+    private string email = "";
+    private string password = "";
+    private string message = "";
+
+    // Handles user login attempt
+    private async Task LoginUser()
+    {
+        bool success = await AuthService.Login(email, password);
+        
+        if (success)
+        {
+            Navigation.NavigateTo("/");
+        }
+        else
+        {
+            message = "Login failed. Please try again.";
+        }
+    }
+}

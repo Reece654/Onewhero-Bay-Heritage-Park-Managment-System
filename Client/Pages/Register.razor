@@ -1,0 +1,159 @@
+@page "/register"
+@using Onewhero_Bay_Heritage_Park_Managment_System.Client.Services
+@inject AuthService AuthService
+@inject NavigationManager Navigation
+
+<h2>Create Account</h2>
+
+@* First Name input field *@
+<div>
+    <label>First Name:</label>
+    <input type="text" @bind="firstName" />
+</div>
+
+@* Last Name input field *@
+<div>
+    <label>Last Name:</label>
+    <input type="text" @bind="lastName" />
+</div>
+
+@* Email input field *@
+<div>
+    <label>Email:</label>
+    <input type="email" @bind="email" />
+</div>
+
+@* Password input field *@
+<div>
+    <label>Password:</label>
+    <input type="password" @bind="password" />
+</div>
+
+@* Interest checkboxes *@
+<div>
+    <label>What activities interest you?</label>
+    <div>
+        <input type="checkbox" @bind="guidedTours" /> Guided Tours
+    </div>
+    <div>
+        <input type="checkbox" @bind="volunteering" /> Volunteering
+    </div>
+    <div>
+        <input type="checkbox" @bind="specialEvents" /> Special Events
+    </div>
+    <div>
+        <input type="checkbox" @bind="educationalPrograms" /> Educational Programs
+    </div>
+    <div>
+        <input type="checkbox" @bind="animalEncounters" /> Animal Encounters
+    </div>
+    <div>
+        <input type="checkbox" @bind="culturalActivities" /> Cultural Activities
+    </div>
+</div>
+
+@* Register button *@
+<button @onclick="RegisterUser">Register</button>
+
+@* Show error message if registration fails *@
+@if (!string.IsNullOrEmpty(message))
+{
+    <p>@message</p>
+}
+
+@* Login link *@
+<p><a href="/login">Already have an account? Login here</a></p>
+
+@* Code block for the RegisterUser method *@
+@code {
+    @* Private fields for the RegisterUser method to store the user's input *@
+    private string firstName = "";
+    private string lastName = "";
+    private string email = "";
+    private string password = "";
+    private string message = "";
+    
+    // Interest checkboxes
+    private bool guidedTours = false;
+    private bool volunteering = false;
+    private bool specialEvents = false;
+    private bool educationalPrograms = false;
+    private bool animalEncounters = false;
+    private bool culturalActivities = false;
+
+    // Handles user registration with interest collection
+    private async Task RegisterUser()
+    {
+        try
+        {
+            // Clear any previous error messages
+            message = "";
+            
+            // Validate required fields
+            if (string.IsNullOrEmpty(firstName))
+            {
+                message = "First name is required.";
+                return;
+            }
+            
+            if (string.IsNullOrEmpty(lastName))
+            {
+                message = "Last name is required.";
+                return;
+            }
+            
+            if (string.IsNullOrEmpty(email))
+            {
+                message = "Email is required.";
+                return;
+            }
+            
+            if (string.IsNullOrEmpty(password))
+            {
+                message = "Password is required.";
+                return;
+            }
+            
+            if (password.Length < 6)
+            {
+                message = "Password needs to be longer than 6 characters";
+                return;
+            }
+            
+            // Validate email format
+            if (!email.Contains("@") || !email.Contains("."))
+            {
+                message = "Invalid email";
+                return;
+            }
+
+            @* This creates a list of interests *@
+            var interests = new List<string>();
+            
+            // Collect selected interests
+            if (guidedTours) interests.Add("guided_tours");
+            if (volunteering) interests.Add("volunteering");
+            if (specialEvents) interests.Add("special_events");
+            if (educationalPrograms) interests.Add("educational_programs");
+            if (animalEncounters) interests.Add("animal_encounters");
+            if (culturalActivities) interests.Add("cultural_activities");
+
+            @* This registers the user with the AuthService *@
+            var (success, errorMessage) = await AuthService.Register(email, password, firstName, lastName, interests);
+            
+            if (success)
+            {
+                @* Navigates the user to the home page *@
+                Navigation.NavigateTo("/");
+            }
+            else
+            {
+                message = errorMessage;
+            }
+        }
+        catch (Exception ex)
+        {
+            message = $"Registration error: {ex.Message}. Please check your connection and try again.";
+        }
+    }
+}
