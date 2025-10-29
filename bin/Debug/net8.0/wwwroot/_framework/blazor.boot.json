@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "Onewhero Bay Heritage Park Managment System.Client",
   "resources": {
-    "hash": "sha256-Zr8BzfgMf68pePr1NsGIUGd61AT5cyAKHrEqkmM4XKM=",
+    "hash": "sha256-tflT4BXEDqGiitf/IVQO8+bYQwmggo3snpXw1NnSYU0=",
     "jsModuleNative": {
       "dotnet.native.js": "sha256-1QpKPnxEuRCElzcp+e3MrovJeAJkuzqKmRQay/6Aa08="
     },
@@ -226,10 +226,10 @@
       "mscorlib.wasm": "sha256-8qWtIcy8fV43tlcx4DxsF45RlkcfK6588vVoxF7be2E=",
       "netstandard.wasm": "sha256-eOgz2RiO4YaPLOMIGgVLNrcfsQhmLQJzR0N7Pu2teXc=",
       "System.Private.CoreLib.wasm": "sha256-F8T63QCIbMPXPQPqTcuyBAw+oVvZSrWjy88j7fiJQZ4=",
-      "Onewhero Bay Heritage Park Managment System.Client.wasm": "sha256-rptSaXj614i72myaDsD7DnxCkxH/CF4I05siu5co2sw="
+      "Onewhero Bay Heritage Park Managment System.Client.wasm": "sha256-Ezjth7RQP4JHxLES14OTBSBJgm3fJBsy/fabNog5R1A="
     },
     "pdb": {
-      "Onewhero Bay Heritage Park Managment System.Client.pdb": "sha256-oF51Q4Cj81rTc5InQLSVcUshK4so3KtbVhJ7FVdoLic="
+      "Onewhero Bay Heritage Park Managment System.Client.pdb": "sha256-Q+HbpehWfZvfF0IfTuCJVrEJuqskh4GDG69kQ6//T6E="
     }
   },
   "cacheBootResources": true,
