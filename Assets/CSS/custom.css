@@ -1,0 +1,11 @@
+/* Mobile/Device scaling removed - ready for fresh implementation */
+
+/* Hamburger Menu Animation */
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}

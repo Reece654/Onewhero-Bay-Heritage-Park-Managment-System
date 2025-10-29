@@ -1,88 +1,482 @@
 @page "/"
-@using Onewhero_Bay_Heritage_Park_Managment_System.Client.Services
-@inject SupabaseService SupabaseService
 
-<h2>Welcome to Onewhero Bay Heritage Park</h2>
-
-<p>Discover the beauty and heritage of New Zealand's Northland region.</p>
-
-@* Navigation links to main sections of the app *@
-<p><a href="/login">Login</a> | <a href="/register">Register</a> | <a href="/events">Events</a> | <a href="/analytics">Analytics</a></p>
-
-@* Supabase Connection Test Section *@
-<div class="mt-4 p-3 border rounded">
-    <h3>Database Connection Test</h3>
-    <p>Test the connection to our Supabase database:</p>
+@* Header Section - Background image with centered logo *@
+<header class="header-section">
+    <img src="BeachHeader.png" alt="Onewhero Bay Heritage Park Header" class="header-image" />
+    @* Hamburger Menu Button *@
+    <div class="hamburger-button" @onclick="ToggleMenu">
+        <img src="HamburgerMenuW.png" alt="Menu" class="hamburger-icon" />
+    </div>
     
-    @if (isTesting)
-    {
-        <div class="text-info">
-            <i class="fas fa-spinner fa-spin"></i> Testing connection...
+    <div class="header-logo-container">
+        <img src="BayLogoWhite.PNG" alt="Onewhero Bay Heritage Park Logo" class="header-logo" />
+    </div>
+</header>
+
+@* Hamburger Menu Overlay *@
+@if (isMenuOpen)
+{
+    <div class="hamburger-menu-overlay" @onclick="CloseMenu">
+        <div class="hamburger-menu" @onclick:stopPropagation="true">
+            @* Close Button *@
+            <div class="close-button" @onclick="CloseMenu">
+                <span class="close-icon">×</span>
+            </div>
+            
+            @* Menu Items *@
+            <div class="menu-items">
+                <div class="menu-item homepage" @onclick="NavigateToHome">Homepage</div>
+                <div class="menu-item" @onclick="NavigateToEvents">Events</div>
+                <div class="menu-item" @onclick="NavigateToContact">Contact Us</div>
+                <div class="menu-item" @onclick="NavigateToAbout">About Us</div>
+                <div class="menu-item" @onclick="NavigateToBooking">Booking</div>
+                <div class="menu-item" @onclick="NavigateToGallery">Gallery (Coming Soon)</div>
+                <div class="menu-item" @onclick="NavigateToSignIn">Sign In</div>
+                <div class="menu-item" @onclick="NavigateToSignUp">Sign Up</div>
+                <div class="menu-item signout" @onclick="NavigateToSignOut">Sign Out</div>
+            </div>
         </div>
+    </div>
+}
+
+@* Main Content Area *@
+<main class="main-content">
+    <div class="container">
+        @* Welcome Heading *@
+        <h1 class="welcome-heading">WELCOME TO ONEWHERO BAY HERITAGE PARK</h1>
+        
+        @* Discover Section with Content Box *@
+        <div class="discover-section">
+            <div class="discover-content-box">
+                <p class="discover-text">Discover the beauty and tranquility of Onewhero Bay, a newly established public space in the heart of Northland's Bay of Islands.</p>
+            </div>
+        </div>
+        
+        @* What Makes Special Heading *@
+        <h2 class="special-heading">What makes Onewhero Bay Special</h2>
+        
+        @* Three Content Boxes *@
+        <div class="content-boxes-container">
+            @* Box 1 - About Us *@
+            <div class="content-box">
+                <h3 class="box-heading">About Us</h3>
+                <p class="box-content">Discover what makes Onewhero Bay one of Northland's most unique new destinations. Visitors come to enjoy its natural beauty. For the time being, the bay is only reachable by water, preserving a sense of wildness and quiet that is often lost in more developed areas. This makes it an attractive destination for boaters and those seeking a private escape.</p>
+                <button class="content-button">Find Out More</button>
+            </div>
+            
+            @* Box 2 - Events *@
+            <div class="content-box">
+                <h3 class="box-heading">Events</h3>
+                <p class="box-content">Join us for exclusive events that celebrate adventure, community, and conservation. We have Our Kayak Challenge. a thrilling multi-stage race across the bay's pristine waters, our Artisanal Food Festival, a gourmet, zero-waste celebration of local Northland flavours and Conservation Day, A hands-on day of beach care, native planting, and expert talks.</p>
+                <button class="content-button">Explore Events</button>
+            </div>
+            
+            @* Box 3 - Location *@
+            <div class="content-box">
+                <h3 class="box-heading">Location</h3>
+                <p class="box-content">Onewhero Bay is located on the Northland Region of New Zealand, facing Moturoa Island at the entrance to the Bay of Islands. It is a long stretch of sand surrounded by private farmland, making it accessible only by sea. For our full location details and contact information please click the contact us link below.</p>
+                <button class="content-button">Contact Us</button>
+            </div>
+        </div>
+    </div>
+</main>
+
+@* Footer Section *@
+<footer class="footer-section">
+    <div class="container">
+        <h3 class="footer-heading">Contact Us</h3>
+        <div class="contact-details">
+            <div class="contact-item">
+                <i class="fas fa-phone contact-icon"></i>
+                <span>+64 06 277 7781</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope contact-icon"></i>
+                <span>info@onewheropark.org.nz</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt contact-icon"></i>
+                <span>123, Onewhero Bay Drive, PO Box 186 Onewhero.</span>
+            </div>
+        </div>
+        <div class="copyright">
+            <span>© 2025 Onewhero Bay Heritage Park. <u>Terms & Conditions Privacy Policy</u></span>
+        </div>
+    </div>
+</footer>
+
+<style>
+    .header-section {
+        position: relative;
+        width: 100%;
+        height: 25vh;
+        min-height: 200px;
+        overflow: hidden;
     }
-    else if (connectionStatus.HasValue)
-    {
-        @if (connectionStatus.Value)
-        {
-            <div class="text-success">
-                <i class="fas fa-check-circle"></i> Database connection successful!
-            </div>
-        }
-        else
-        {
-            <div class="text-danger">
-                <i class="fas fa-exclamation-circle"></i> Database connection failed. Please check your configuration.
-                @if (!string.IsNullOrEmpty(errorMessage))
-                {
-                    <br><small>@errorMessage</small>
-                }
-            </div>
-        }
+
+    .header-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .header-logo-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+    }
+
+    .header-logo {
+        max-width: 486px;
+        max-height: 292px;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+    }
+
+    /* Global Reset and Typography */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Tahoma', sans-serif;
+        color: white;
     }
     
-    <button class="btn btn-primary mt-2" @onclick="TestConnection" disabled="@isTesting">
-        @if (isTesting)
-        {
-            <span>Testing...</span>
-        }
-        else
-        {
-            <span>Test Connection</span>
-        }
-    </button>
-</div>
+    html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* Main Content Area */
+    .main-content {
+        background-color: #23607B;
+        padding: 60px 0;
+    }
+
+    /* Welcome Heading */
+    .welcome-heading {
+        font-size: 36px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    /* Discover Section */
+    .discover-section {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 60px;
+    }
+
+    .discover-content-box {
+        background-color: #1E5167;
+        width: 100%;
+        max-width: 1531px;
+        min-height: 74px;
+        border-radius: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px 20px;
+    }
+
+    .discover-text {
+        font-size: 22px;
+        font-weight: normal;
+        margin: 0;
+        text-align: center;
+    }
+
+    /* Special Heading */
+    .special-heading {
+        font-size: 36px;
+        font-weight: bold;
+        letter-spacing: 0.08em;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    /* Content Boxes Container */
+    .content-boxes-container {
+        display: flex;
+        justify-content: center;
+        gap: 27px;
+        margin-bottom: 60px;
+        flex-wrap: nowrap;
+    }
+
+    /* Individual Content Box */
+    .content-box {
+        background-color: #1E5167;
+        width: 100%;
+        max-width: 491px;
+        height: 500px;
+        border-radius: 25px;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .box-heading {
+        font-size: 28px;
+        font-weight: bold;
+        letter-spacing: 0.08em;
+        margin: 0 0 20px 0;
+    }
+
+    .box-content {
+        font-size: 21px;
+        font-weight: normal;
+        line-height: 1.4;
+        flex-grow: 1;
+        margin: 0 0 20px 0;
+    }
+
+    .content-button {
+        background-color: #3A7A9A;
+        width: 228px;
+        height: 60.59px;
+        border-radius: 9.73px;
+        border: none;
+        color: white;
+        font-size: 19.47px;
+        font-weight: bold;
+        text-align: center;
+        cursor: pointer;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        align-self: center;
+    }
+
+    .content-button:hover {
+        background-color: #2d5f7a;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Footer Section */
+    .footer-section {
+        background-color: #1E5167;
+        width: 100%;
+        height: 283px;
+        padding: 40px 0;
+    }
+
+    .footer-heading {
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .contact-details {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .contact-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 15px;
+        font-size: 16px;
+    }
+
+    .contact-icon {
+        margin-right: 15px;
+        font-size: 18px;
+        width: 20px;
+    }
+
+    .copyright {
+        text-align: center;
+        font-size: 14px;
+    }
+
+    /* Hamburger Menu Button */
+    .hamburger-button {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        z-index: 20;
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .hamburger-button:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .hamburger-icon {
+        width: 66px;
+        height: 66px;
+        filter: brightness(0) invert(1);
+    }
+
+    /* Hamburger Menu Overlay */
+    .hamburger-menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1000;
+        animation: slideIn 0.3s ease-out;
+    }
+
+    .hamburger-menu {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 345px;
+        height: 100vh;
+        background-color: rgba(28, 68, 86, 0.9);
+        border-radius: 0 10px 10px 0;
+        padding: 20px;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .close-button {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .close-button:hover {
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+
+    .close-icon {
+        font-size: 24px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .menu-items {
+        margin-top: 60px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .menu-item {
+        padding: 15px 20px;
+        color: white;
+        font-weight: bold;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        text-align: left;
+    }
+
+    .menu-item:hover {
+        transform: translateX(5px);
+    }
+
+    .menu-item.homepage,
+    .menu-item.signout {
+        background-color: #153A47;
+        opacity: 1;
+    }
+
+    .menu-item:not(.homepage):not(.signout) {
+        background-color: #1C495D;
+        opacity: 0.9;
+    }
+
+    .menu-item:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Keyframes moved to custom.css */
+</style>
 
 @code {
-    private bool? connectionStatus = null;
-    private bool isTesting = false;
-    private string errorMessage = "";
+    private bool isMenuOpen = false;
 
-    private async Task TestConnection()
+    private void ToggleMenu()
     {
-        isTesting = true;
-        connectionStatus = null;
-        errorMessage = "";
-        StateHasChanged();
+        isMenuOpen = !isMenuOpen;
+    }
 
-        try
-        {
-            var result = await SupabaseService.TestConnectionAsync();
-            connectionStatus = result;
-            if (!result)
-            {
-                errorMessage = "Connection failed - check console for details";
-            }
-        }
-        catch (Exception ex)
-        {
-            connectionStatus = false;
-            errorMessage = $"Error: {ex.Message}";
-            Console.WriteLine($"Connection test error: {ex.Message}");
-        }
-        finally
-        {
-            isTesting = false;
-            StateHasChanged();
-        }
+    private void CloseMenu()
+    {
+        isMenuOpen = false;
+    }
+
+    private void NavigateToHome()
+    {
+        CloseMenu();
+        // Navigation logic for Homepage
+    }
+
+    private void NavigateToEvents()
+    {
+        CloseMenu();
+        // Navigation logic for Events
+    }
+
+    private void NavigateToContact()
+    {
+        CloseMenu();
+        // Navigation logic for Contact Us
+    }
+
+    private void NavigateToAbout()
+    {
+        CloseMenu();
+        // Navigation logic for About Us
+    }
+
+    private void NavigateToBooking()
+    {
+        CloseMenu();
+        // Navigation logic for Booking
+    }
+
+    private void NavigateToGallery()
+    {
+        CloseMenu();
+        // Navigation logic for Gallery
+    }
+
+    private void NavigateToSignIn()
+    {
+        CloseMenu();
+        // Navigation logic for Sign In
+    }
+
+    private void NavigateToSignUp()
+    {
+        CloseMenu();
+        // Navigation logic for Sign Up
+    }
+
+    private void NavigateToSignOut()
+    {
+        CloseMenu();
+        // Navigation logic for Sign Out
     }
 }
