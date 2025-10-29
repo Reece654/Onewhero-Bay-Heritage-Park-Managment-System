@@ -1,0 +1,493 @@
+@page "/events"
+
+@* Header Section - Background image with centered logo *@
+<header class="header-section">
+    <img src="BeachHeader.png" alt="Onewhero Bay Heritage Park Header" class="header-image" />
+    @* Hamburger Menu Button *@
+    <div class="hamburger-button" @onclick="ToggleMenu">
+        <img src="HamburgerMenuW.png" alt="Menu" class="hamburger-icon" />
+    </div>
+    
+    <div class="header-logo-container" @onclick="NavigateToHome">
+        <img src="BayLogoWhite.PNG" alt="Onewhero Bay Heritage Park Logo" class="header-logo" />
+    </div>
+</header>
+
+@* Hamburger Menu Overlay *@
+@if (isMenuOpen)
+{
+    <div class="hamburger-menu-overlay" @onclick="CloseMenu">
+        <div class="hamburger-menu" @onclick:stopPropagation="true">
+            @* Close Button *@
+            <div class="close-button" @onclick="CloseMenu">
+                <span class="close-icon">×</span>
+            </div>
+            
+            @* Menu Items *@
+            <div class="menu-items">
+                <div class="menu-item homepage" @onclick="NavigateToHome">Homepage</div>
+                <div class="menu-item" @onclick="NavigateToEvents">Events</div>
+                <div class="menu-item" @onclick="NavigateToContact">Contact Us</div>
+                <div class="menu-item" @onclick="NavigateToAbout">About Us</div>
+                <div class="menu-item" @onclick="NavigateToBooking">Booking</div>
+                <div class="menu-item" @onclick="NavigateToGallery">Gallery (Coming Soon)</div>
+                <div class="menu-item" @onclick="NavigateToSignIn">Sign In</div>
+                <div class="menu-item" @onclick="NavigateToSignUp">Sign Up</div>
+                <div class="menu-item signout" @onclick="NavigateToSignOut">Sign Out</div>
+            </div>
+        </div>
+    </div>
+}
+
+@* Main Content Area *@
+<main class="main-content">
+    <div class="container">
+        @* Events Heading *@
+        <h1 class="welcome-heading">EVENTS</h1>
+        
+        @* Discover Section with Content Box *@
+        <div class="discover-section">
+            <div class="discover-content-box events-subtitle-box">
+                <p class="discover-text">Discover our seasonal and community events at Onewhero Bay that celebrate nature, culture and local food.</p>
+            </div>
+        </div>
+        
+        @* Featured Events Heading *@
+        <h2 class="special-heading">Featured Events</h2>
+        
+        @* Three Content Boxes *@
+        <div class="content-boxes-container">
+            @* Box 1 - Kayak Challenge *@
+            <div class="content-box">
+                <h3 class="box-heading">Kayak Challenge</h3>
+                <p class="box-content">A multi-stage kayak and paddleboarding race that embraces the bay's water-only access and wild coastal routes. Competitors start and finish at Onewhero Bay, navigating a course around nearby islets and headlands marked by floating buoys. Spectators arrive by boat to watch the finish line on the sand and enjoy post-race community gatherings.</p>
+                <button class="content-button">Find Out More</button>
+            </div>
+            
+            @* Box 2 - Artisanal Food Festival *@
+            <div class="content-box">
+                <h3 class="box-heading">Artisanal Food Festival</h3>
+                <p class="box-content">A small, exclusive gourmet festival showcasing Northland producers, chefs and seafood artisans on the beach. Attendees arrive by boat to sample seasonal dishes prepared using local ingredients, with a focus on sustainable, zero‑waste practices and compostable serviceware.</p>
+                <button class="content-button">Find Out More</button>
+            </div>
+            
+            @* Box 3 - Conservation Day *@
+            <div class="content-box">
+                <h3 class="box-heading">Conservation Day</h3>
+                <p class="box-content">A community-focused day of conservation work and environmental education suitable for all ages. Volunteers are ferried to the bay to take part in beach cleanups, native planting and ecological surveys guided by experts. The event combines practical restoration with expert talks on marine life, seabird ecology and responsible boating, and provides free refreshments for participants.</p>
+                <button class="content-button">Find Out More</button>
+            </div>
+        </div>
+    </div>
+</main>
+
+@* Footer Section *@
+<footer class="footer-section">
+    <div class="container">
+        <h3 class="footer-heading">Contact Us</h3>
+        <div class="contact-details">
+            <div class="contact-item">
+                <i class="fas fa-phone contact-icon"></i>
+                <span>+64 06 277 7781</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope contact-icon"></i>
+                <span>info@onewheropark.org.nz</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt contact-icon"></i>
+                <span>123, Onewhero Bay Drive, PO Box 186 Onewhero.</span>
+            </div>
+        </div>
+        <div class="copyright">
+            <span>© 2025 Onewhero Bay Heritage Park. <u>Terms & Conditions Privacy Policy</u></span>
+        </div>
+    </div>
+</footer>
+
+<style>
+    /* Reuse all existing styles from Index.razor */
+    .header-section {
+        position: relative;
+        width: 100%;
+        height: 25vh;
+        min-height: 200px;
+        overflow: hidden;
+    }
+
+    .header-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .header-logo-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+        cursor: pointer;
+    }
+
+    .header-logo {
+        max-width: min(486px, 60vw);
+        max-height: min(292px, 45vh);
+        width: auto;
+        height: auto;
+        object-fit: contain;
+    }
+
+    /* Global Reset and Typography */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Tahoma', sans-serif;
+        color: white;
+    }
+    
+    html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* Main Content Area */
+    .main-content {
+        background-color: #23607B;
+        padding: 60px 0;
+    }
+
+    /* Events Heading - Reuse welcome-heading class */
+    .welcome-heading {
+        font-size: clamp(24px, 4vw, 36px);
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    /* Discover Section - Reuse existing classes */
+    .discover-section {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 60px;
+    }
+
+    .discover-content-box {
+        background-color: #1E5167;
+        width: 100%;
+        max-width: min(1531px, 95vw);
+        min-height: 74px;
+        border-radius: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px 20px;
+    }
+
+    /* Events specific subtitle box - slightly narrower as specified */
+    .events-subtitle-box {
+        max-width: min(1316px, 90vw);
+    }
+
+    .discover-text {
+        font-size: clamp(16px, 2.5vw, 22px);
+        font-weight: normal;
+        margin: 0;
+        text-align: center;
+    }
+
+    /* Featured Events Heading - Reuse special-heading class */
+    .special-heading {
+        font-size: clamp(20px, 3.5vw, 36px);
+        font-weight: bold;
+        letter-spacing: 0.08em;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    /* Content Boxes Container - Reuse existing grid layout */
+    .content-boxes-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 27px;
+        justify-items: center;
+        max-width: 1200px;
+        margin: 0 auto 60px auto;
+    }
+
+    /* Individual Content Box - Reuse existing classes */
+    .content-box {
+        background-color: #1E5167;
+        width: 100%;
+        max-width: min(491px, 90vw);
+        height: auto;
+        min-height: 400px;
+        border-radius: 25px;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .box-heading {
+        font-size: clamp(20px, 3vw, 28px);
+        font-weight: bold;
+        letter-spacing: 0.08em;
+        margin: 0 0 20px 0;
+    }
+
+    .box-content {
+        font-size: clamp(16px, 2vw, 21px);
+        font-weight: normal;
+        line-height: 1.4;
+        flex-grow: 1;
+        margin: 0 0 20px 0;
+    }
+
+    .content-button {
+        background-color: #3A7A9A;
+        width: min(228px, 80%);
+        height: min(60.59px, 8vh);
+        border-radius: 9.73px;
+        border: none;
+        color: white;
+        font-size: clamp(14px, 2vw, 19.47px);
+        font-weight: bold;
+        text-align: center;
+        cursor: pointer;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        align-self: center;
+    }
+
+    .content-button:hover {
+        background-color: #2d5f7a;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Footer Section - Reuse existing classes */
+    .footer-section {
+        background-color: #1E5167;
+        width: 100%;
+        height: 283px;
+        padding: 40px 0;
+    }
+
+    .footer-heading {
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .contact-details {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .contact-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 15px;
+        font-size: 16px;
+    }
+
+    .contact-icon {
+        margin-right: 15px;
+        font-size: 18px;
+        width: 20px;
+    }
+
+    .copyright {
+        text-align: center;
+        font-size: 14px;
+    }
+
+    /* Hamburger Menu Button - Reuse existing classes */
+    .hamburger-button {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        z-index: 20;
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .hamburger-button:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .hamburger-icon {
+        width: min(66px, 8vw);
+        height: min(66px, 8vw);
+        filter: brightness(0) invert(1);
+    }
+
+    /* Hamburger Menu Overlay - Reuse existing classes */
+    .hamburger-menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1000;
+        animation: slideIn 0.3s ease-out;
+    }
+
+    .hamburger-menu {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 345px;
+        height: 100vh;
+        background-color: rgba(28, 68, 86, 0.9);
+        border-radius: 0 10px 10px 0;
+        padding: 20px;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .close-button {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .close-button:hover {
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+
+    .close-icon {
+        font-size: 24px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .menu-items {
+        margin-top: 60px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .menu-item {
+        padding: 15px 20px;
+        color: white;
+        font-weight: bold;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        text-align: left;
+    }
+
+    .menu-item:hover {
+        transform: translateX(5px);
+    }
+
+    .menu-item.homepage,
+    .menu-item.signout {
+        background-color: #153A47;
+        opacity: 1;
+    }
+
+    .menu-item:not(.homepage):not(.signout) {
+        background-color: #1C495D;
+        opacity: 0.9;
+    }
+
+    .menu-item:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Animation keyframes moved to custom.css */
+</style>
+
+@code {
+    [Inject] private NavigationManager NavigationManager { get; set; } = default!;
+    
+    private bool isMenuOpen = false;
+
+    private void ToggleMenu()
+    {
+        isMenuOpen = !isMenuOpen;
+    }
+
+    private void CloseMenu()
+    {
+        isMenuOpen = false;
+    }
+
+    private void NavigateToHome()
+    {
+        CloseMenu();
+        NavigationManager.NavigateTo("/");
+    }
+
+    private void NavigateToEvents()
+    {
+        CloseMenu();
+        // Already on Events page
+    }
+
+    private void NavigateToContact()
+    {
+        CloseMenu();
+        // Navigation logic for Contact Us
+    }
+
+    private void NavigateToAbout()
+    {
+        CloseMenu();
+        // Navigation logic for About Us
+    }
+
+    private void NavigateToBooking()
+    {
+        CloseMenu();
+        // Navigation logic for Booking
+    }
+
+    private void NavigateToGallery()
+    {
+        CloseMenu();
+        // Navigation logic for Gallery
+    }
+
+    private void NavigateToSignIn()
+    {
+        CloseMenu();
+        // Navigation logic for Sign In
+    }
+
+    private void NavigateToSignUp()
+    {
+        CloseMenu();
+        // Navigation logic for Sign Up
+    }
+
+    private void NavigateToSignOut()
+    {
+        CloseMenu();
+        // Navigation logic for Sign Out
+    }
+}

@@ -8,9 +8,9 @@
         <img src="HamburgerMenuW.png" alt="Menu" class="hamburger-icon" />
     </div>
     
-    <div class="header-logo-container">
-        <img src="BayLogoWhite.PNG" alt="Onewhero Bay Heritage Park Logo" class="header-logo" />
-    </div>
+            <div class="header-logo-container" @onclick="NavigateToHome">
+                <img src="BayLogoWhite.PNG" alt="Onewhero Bay Heritage Park Logo" class="header-logo" />
+            </div>
 </header>
 
 @* Hamburger Menu Overlay *@
@@ -68,7 +68,7 @@
             <div class="content-box">
                 <h3 class="box-heading">Events</h3>
                 <p class="box-content">Join us for exclusive events that celebrate adventure, community, and conservation. We have Our Kayak Challenge. a thrilling multi-stage race across the bay's pristine waters, our Artisanal Food Festival, a gourmet, zero-waste celebration of local Northland flavours and Conservation Day, A hands-on day of beach care, native planting, and expert talks.</p>
-                <button class="content-button">Explore Events</button>
+                        <button class="content-button" @onclick="NavigateToEvents">Explore Events</button>
             </div>
             
             @* Box 3 - Location *@
@@ -127,6 +127,7 @@
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 10;
+        cursor: pointer;
     }
 
     .header-logo {
@@ -416,6 +417,8 @@
 </style>
 
 @code {
+    [Inject] private NavigationManager NavigationManager { get; set; } = default!;
+    
     private bool isMenuOpen = false;
 
     private void ToggleMenu()
@@ -437,7 +440,8 @@
     private void NavigateToEvents()
     {
         CloseMenu();
-        // Navigation logic for Events
+        // Navigate to Events page
+        NavigationManager.NavigateTo("/events");
     }
 
     private void NavigateToContact()
