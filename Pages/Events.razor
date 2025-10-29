@@ -75,7 +75,7 @@
             <div class="content-box">
                 <h3 class="box-heading">Conservation Day</h3>
                 <p class="box-content">A community-focused day of conservation work and environmental education suitable for all ages. Volunteers are ferried to the bay to take part in beach cleanups, native planting and ecological surveys guided by experts. The event combines practical restoration with expert talks on marine life, seabird ecology and responsible boating, and provides free refreshments for participants.</p>
-                <button class="content-button">Find Out More</button>
+                <button class="content-button" @onclick="NavigateToConservationDay">Find Out More</button>
             </div>
         </div>
     </div>
@@ -449,11 +449,11 @@
         // Already on Events page
     }
 
-    private void NavigateToContact()
-    {
-        CloseMenu();
-        // Navigation logic for Contact Us
-    }
+        private void NavigateToContact()
+        {
+            CloseMenu();
+            NavigationManager.NavigateTo("/contactus");
+        }
 
     private void NavigateToAbout()
     {
@@ -489,5 +489,10 @@
     {
         CloseMenu();
         // Navigation logic for Sign Out
+    }
+
+    private void NavigateToConservationDay()
+    {
+        NavigationManager.NavigateTo("/event-conservation-day");
     }
 }

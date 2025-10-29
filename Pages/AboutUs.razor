@@ -1,4 +1,4 @@
-@page "/"
+@page "/aboutus"
 
 @* Header Section - Background image with centered logo *@
 <header class="header-section">
@@ -8,9 +8,9 @@
         <img src="HamburgerMenuW.png" alt="Menu" class="hamburger-icon" />
     </div>
     
-            <div class="header-logo-container" @onclick="NavigateToHome">
-                <img src="BayLogoWhite.PNG" alt="Onewhero Bay Heritage Park Logo" class="header-logo" />
-            </div>
+    <div class="header-logo-container" @onclick="NavigateToHome">
+        <img src="BayLogoWhite.PNG" alt="Onewhero Bay Heritage Park Logo" class="header-logo" />
+    </div>
 </header>
 
 @* Hamburger Menu Overlay *@
@@ -42,40 +42,40 @@
 @* Main Content Area *@
 <main class="main-content">
     <div class="container">
-        @* Welcome Heading *@
-        <h1 class="welcome-heading">WELCOME TO ONEWHERO BAY HERITAGE PARK</h1>
+        @* Main Title *@
+        <h1 class="welcome-heading">ABOUT ONEWHERO BAY HERITAGE PARK</h1>
         
-        @* Discover Section with Content Box *@
+        @* Intro Section with Content Box *@
         <div class="discover-section">
             <div class="discover-content-box">
-                <p class="discover-text">Discover the beauty and tranquility of Onewhero Bay, a newly established public space in the heart of Northland's Bay of Islands.</p>
+                <p class="discover-text">A quiet coastal sanctuary where nature, culture and community meet</p>
             </div>
         </div>
         
         @* What Makes Special Heading *@
-        <h2 class="special-heading">What makes Onewhero Bay Special</h2>
+        <h2 class="special-heading">What make Onewhero Bay Special</h2>
         
         @* Three Content Boxes *@
         <div class="content-boxes-container">
-            @* Box 1 - About Us *@
+            @* Box 1 - Our Story *@
             <div class="content-box">
-                <h3 class="box-heading">About Us</h3>
-                <p class="box-content">Discover what makes Onewhero Bay one of Northland's most unique new destinations. Visitors come to enjoy its natural beauty. For the time being, the bay is only reachable by water, preserving a sense of wildness and quiet that is often lost in more developed areas. This makes it an attractive destination for boaters and those seeking a private escape.</p>
-                    <button class="content-button" @onclick="NavigateToAbout">Find Out More</button>
+                <h3 class="box-heading">Our Story</h3>
+                <p class="box-content">Onewhero Bay Heritage Park presents a newly opened public space within the Bay of Islands. Only accessible only by water, the bay offers visitors a step back in time, to enjoy experiences that celebrate local landscapes and living culture. We restore and maintain this sanctuary through community events, donations, conservation work and eco-tourism services that respect the land and its history.</p>
+                <button class="content-button">Find Out More</button>
             </div>
             
-            @* Box 2 - Events *@
+            @* Box 2 - Conservation and Culture *@
             <div class="content-box">
-                <h3 class="box-heading">Events</h3>
-                <p class="box-content">Join us for exclusive events that celebrate adventure, community, and conservation. We have Our Kayak Challenge. a thrilling multi-stage race across the bay's pristine waters, our Artisanal Food Festival, a gourmet, zero-waste celebration of local Northland flavours and Conservation Day, A hands-on day of beach care, native planting, and expert talks.</p>
-                        <button class="content-button" @onclick="NavigateToEvents">Explore Events</button>
+                <h3 class="box-heading">Conservation and Culture</h3>
+                <p class="box-content">This starts with regular clean-ups, tree-ranges and eco-tourism groups to protect native habitats and marine species. Conservation initiatives include hands-on camps, native planting, and wildlife preservation. Cultural programming highlights the Bay's Māori and European heritage through guided walks and community-led exhibitions.</p>
+                <button class="content-button">Contact Us</button>
             </div>
             
-            @* Box 3 - Location *@
+            @* Box 3 - Visitor Experience *@
             <div class="content-box">
-                <h3 class="box-heading">Location</h3>
-                <p class="box-content">Onewhero Bay is located on the Northland Region of New Zealand, facing Moturoa Island at the entrance to the Bay of Islands. It is a long stretch of sand surrounded by private farmland, making it accessible only by sea. For our full location details and contact information please click the contact us link below.</p>
-                <button class="content-button" @onclick="NavigateToContact">Contact Us</button>
+                <h3 class="box-heading">Visitor Experience</h3>
+                <p class="box-content">Visitors can explore the reserve, book guided services and discover practical visitor information here. The park prioritises accessibility, safety and sustainability by small group tours, on-permission and access on eco-friendly boats, picnic areas and clear guidance for low-impact visits. Plan ahead: bring what you need and leave the bay as you found it.</p>
+                <button class="content-button" @onclick="NavigateToEvents">Explore Event</button>
             </div>
         </div>
     </div>
@@ -213,6 +213,7 @@
         justify-items: center;
         max-width: 1200px;
         margin: 0 auto 60px auto;
+        flex-wrap: nowrap; /* Ensure they stay on one line on desktop */
     }
 
     /* Individual Content Box - Self-Adjusting */
@@ -221,7 +222,7 @@
         width: 100%;
         max-width: min(491px, 90vw);
         height: auto;
-        min-height: 400px;
+        min-height: 500px; /* Increased height */
         border-radius: 25px;
         padding: 30px;
         display: flex;
@@ -434,13 +435,12 @@
     private void NavigateToHome()
     {
         CloseMenu();
-        // Navigation logic for Homepage
+        NavigationManager.NavigateTo("/");
     }
 
     private void NavigateToEvents()
     {
         CloseMenu();
-        // Navigate to Events page
         NavigationManager.NavigateTo("/events");
     }
 
@@ -450,11 +450,11 @@
             NavigationManager.NavigateTo("/contactus");
         }
 
-        private void NavigateToAbout()
-        {
-            CloseMenu();
-            NavigationManager.NavigateTo("/aboutus");
-        }
+    private void NavigateToAbout()
+    {
+        CloseMenu();
+        // Already on About Us page
+    }
 
     private void NavigateToBooking()
     {
@@ -480,9 +480,9 @@
         // Navigation logic for Sign Up
     }
 
-        private void NavigateToSignOut()
-        {
-            CloseMenu();
-            // Navigation logic for Sign Out
-        }
+    private void NavigateToSignOut()
+    {
+        CloseMenu();
+        // Navigation logic for Sign Out
+    }
 }

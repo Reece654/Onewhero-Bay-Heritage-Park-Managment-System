@@ -1,0 +1,177 @@
+@page "/about"
+
+@* Header Section - Background image with centered logo *@
+<header class="header-section">
+    <img src="BeachHeader.png" alt="Onewhero Bay Heritage Park Header" class="header-image" />
+    @* Hamburger Menu Button *@
+    <div class="hamburger-button" @onclick="ToggleMenu">
+        <img src="HamburgerMenuW.png" alt="Menu" class="hamburger-icon" />
+    </div>
+    
+    <div class="header-logo-container" @onclick="NavigateToHome">
+        <img src="BayLogoWhite.PNG" alt="Onewhero Bay Heritage Park Logo" class="header-logo" />
+    </div>
+</header>
+
+@* Hamburger Menu Overlay *@
+@if (isMenuOpen)
+{
+    <div class="hamburger-menu-overlay" @onclick="CloseMenu">
+        <div class="hamburger-menu" @onclick:stopPropagation="true">
+            @* Close Button *@
+            <div class="close-button" @onclick="CloseMenu">
+                <span class="close-icon">×</span>
+            </div>
+            
+            @* Menu Items *@
+            <div class="menu-items">
+                <div class="menu-item homepage" @onclick="NavigateToHome">Homepage</div>
+                <div class="menu-item" @onclick="NavigateToEvents">Events</div>
+                <div class="menu-item" @onclick="NavigateToContact">Contact Us</div>
+                <div class="menu-item" @onclick="NavigateToAbout">About Us</div>
+                <div class="menu-item" @onclick="NavigateToBooking">Booking</div>
+                <div class="menu-item" @onclick="NavigateToGallery">Gallery (Coming Soon)</div>
+                <div class="menu-item" @onclick="NavigateToSignIn">Sign In</div>
+                <div class="menu-item" @onclick="NavigateToSignUp">Sign Up</div>
+                <div class="menu-item signout" @onclick="NavigateToSignOut">Sign Out</div>
+            </div>
+        </div>
+    </div>
+}
+
+@* Main Content Area *@
+<main class="main-content">
+    <div class="container">
+        @* About Us Heading *@
+        <h1 class="page-heading">ABOUT ONEWHERO BAY HERITAGE PARK</h1>
+        
+        @* Tagline Section with Content Box *@
+        <div class="content-box-section">
+            <div class="content-box">
+                <p class="content-text">A quiet coastal sanctuary where nature, culture and community meet.</p>
+            </div>
+        </div>
+        
+        @* What Makes Special Heading *@
+        <h2 class="section-heading">What make Onewhero Bay Special</h2>
+        
+        @* Three Content Boxes *@
+        <div class="grid-container">
+            @* Box 1 - Our Story *@
+            <div class="card">
+                <h3 class="card-title">Our Story</h3>
+                <p class="card-content">Onewhero Bay Heritage Park is a newly established public space in the heart of Northland's Bay of Islands. For the time being, the bay is only reachable by water, preserving a sense of wildness and quiet that is often lost in more developed areas. This makes it an attractive destination for boaters and those seeking a private escape. The park offers a low-impact experience that celebrates the natural beauty of the area while providing opportunities for community involvement, conservation, and visitor services.</p>
+                <button class="button" @onclick="NavigateToContact">How To Support</button>
+            </div>
+            
+            @* Box 2 - Conservation and Culture *@
+            <div class="card">
+                <h3 class="card-title">Conservation and Culture</h3>
+                <p class="card-content">We work closely with tangata whenua, local rangers, and volunteer groups to protect and restore the native habitat. Our conservation efforts include regular beach clean-ups, native planting programs, and wildlife preservation initiatives. We also offer cultural programming that celebrates both Māori and European heritage through guided talks, walks, and exhibitions that help visitors understand the rich history and significance of this special place.</p>
+                <button class="button" @onclick="NavigateToContact">Contact Us</button>
+            </div>
+            
+            @* Box 3 - Visitor Experience *@
+            <div class="card">
+                <h3 class="card-title">Visitor Experience</h3>
+                <p class="card-content">All events require registration, and we offer guided activities and visitor information to enhance your experience. Our priorities include accessibility, safety, sustainability, and small-group events. Please note that there is no permanent road access to the park, so all visits are by water only. We encourage eco-friendly practices and low-impact visits. We recommend planning ahead and checking our event calendar for the best times to visit.</p>
+                <button class="button" @onclick="NavigateToEvents">Explore Events</button>
+            </div>
+        </div>
+    </div>
+</main>
+
+@* Footer Section *@
+<footer class="footer-section">
+    <div class="container">
+        <h3 class="footer-heading">Contact Us</h3>
+        <div class="contact-details">
+            <div class="contact-item">
+                <i class="fas fa-phone contact-icon"></i>
+                <span>+64 06 277 7781</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope contact-icon"></i>
+                <span>info@onewheropark.org.nz</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt contact-icon"></i>
+                <span>123, Onewhero Bay Drive, PO Box 186 Onewhero.</span>
+            </div>
+        </div>
+        <div class="copyright">
+            <span>© 2025 Onewhero Bay Heritage Park. <u>Terms & Conditions Privacy Policy</u></span>
+        </div>
+    </div>
+</footer>
+
+
+@code {
+    [Inject] private NavigationManager NavigationManager { get; set; } = default!;
+    
+    private bool isMenuOpen = false;
+
+    private void ToggleMenu()
+    {
+        isMenuOpen = !isMenuOpen;
+    }
+
+    private void CloseMenu()
+    {
+        isMenuOpen = false;
+    }
+
+    private void NavigateToHome()
+    {
+        CloseMenu();
+        NavigationManager.NavigateTo("/");
+    }
+
+    private void NavigateToEvents()
+    {
+        CloseMenu();
+        NavigationManager.NavigateTo("/events");
+    }
+
+    private void NavigateToContact()
+    {
+        CloseMenu();
+        // Navigation logic for Contact Us
+    }
+
+    private void NavigateToAbout()
+    {
+        CloseMenu();
+        NavigationManager.NavigateTo("/about");
+    }
+
+    private void NavigateToBooking()
+    {
+        CloseMenu();
+        NavigationManager.NavigateTo("/bookings");
+    }
+
+    private void NavigateToGallery()
+    {
+        CloseMenu();
+        // Navigation logic for Gallery
+    }
+
+    private void NavigateToSignIn()
+    {
+        CloseMenu();
+        NavigationManager.NavigateTo("/login");
+    }
+
+    private void NavigateToSignUp()
+    {
+        CloseMenu();
+        NavigationManager.NavigateTo("/register");
+    }
+
+    private void NavigateToSignOut()
+    {
+        CloseMenu();
+        // Navigation logic for Sign Out
+    }
+}

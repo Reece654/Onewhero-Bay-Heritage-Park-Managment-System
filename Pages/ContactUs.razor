@@ -1,4 +1,4 @@
-@page "/"
+@page "/contactus"
 
 @* Header Section - Background image with centered logo *@
 <header class="header-section">
@@ -8,9 +8,9 @@
         <img src="HamburgerMenuW.png" alt="Menu" class="hamburger-icon" />
     </div>
     
-            <div class="header-logo-container" @onclick="NavigateToHome">
-                <img src="BayLogoWhite.PNG" alt="Onewhero Bay Heritage Park Logo" class="header-logo" />
-            </div>
+    <div class="header-logo-container" @onclick="NavigateToHome">
+        <img src="BayLogoWhite.PNG" alt="Onewhero Bay Heritage Park Logo" class="header-logo" />
+    </div>
 </header>
 
 @* Hamburger Menu Overlay *@
@@ -42,40 +42,121 @@
 @* Main Content Area *@
 <main class="main-content">
     <div class="container">
-        @* Welcome Heading *@
-        <h1 class="welcome-heading">WELCOME TO ONEWHERO BAY HERITAGE PARK</h1>
+        @* Main Title *@
+        <h1 class="welcome-heading">CONTACT US</h1>
         
-        @* Discover Section with Content Box *@
-        <div class="discover-section">
-            <div class="discover-content-box">
-                <p class="discover-text">Discover the beauty and tranquility of Onewhero Bay, a newly established public space in the heart of Northland's Bay of Islands.</p>
+        @* How to reach us - Top Section *@
+        <div class="contact-section">
+            <div class="contact-content-box">
+                <h2 class="contact-heading">How to reach us</h2>
+                <p class="contact-text">Our office is located at 12 Harbour Street, Paihia, which is a short walk and a 15-minute boat ride to Onewhero Bay. Visit us there to pick up visitor information, pay for on-site bookings, or meet the volunteer coordination team.</p>
             </div>
         </div>
         
-        @* What Makes Special Heading *@
-        <h2 class="special-heading">What makes Onewhero Bay Special</h2>
+        @* Contact Information Section *@
+        <div class="contact-section">
+            <div class="contact-content-box">
+                <h2 class="contact-heading">Contact information</h2>
+                
+                <div class="contact-info-grid">
+                    <div class="contact-info-item">
+                        <h3 class="contact-subheading">Visitor Services</h3>
+                        <ul class="contact-list">
+                            <li>Email: info@onewherobay.org.nz</li>
+                            <li>Phone: +64 9 123 4567</li>
+                            <li>Office hours: Mon-Fri 9:00-16:00; Sat 10:00-14:00</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <h3 class="contact-subheading">Bookings and Events</h3>
+                        <ul class="contact-list">
+                            <li>Booking support: bookings@onewherobay.org.nz</li>
+                            <li>Group/school bookings: groupbookings@onewherobay.org.nz</li>
+                            <li>Booking phone: +64 9 123 4568</li>
+                            <li>Booking confirmation: 48 hours</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <h3 class="contact-subheading">Emergency and On-Site Safety</h3>
+                        <ul class="contact-list">
+                            <li>On-site incident line: +64 9 021 111 222</li>
+                            <li>Life-threatening emergencies: Call 111</li>
+                            <li>Environmental hazard reporting: info@onewherobay.org.nz</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <h3 class="contact-subheading">Accessibility and Special Assistance</h3>
+                        <ul class="contact-list">
+                            <li>Accessibility contact: access@onewherobay.org.nz</li>
+                            <li>Plan your visit for mobility/sensory needs</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <h3 class="contact-subheading">Volunteering and Conservation</h3>
+                        <ul class="contact-list">
+                            <li>Volunteer coordinator: volunteer@onewherobay.org.nz</li>
+                            <li>Activities and orientations available</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <h3 class="contact-subheading">Media and Partnerships</h3>
+                        <ul class="contact-list">
+                            <li>Media enquiries: media@onewherobay.org.nz</li>
+                            <li>Partnerships/sponsorship: partners@onewherobay.org.nz</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <h3 class="contact-subheading">Directions and Practical Notes</h3>
+                        <ul class="contact-list">
+                            <li>Nearest public boat launch: Paihia Wharf</li>
+                            <li>Return boat pickup: Pre-arranged</li>
+                            <li>Limited on-road parking available</li>
+                            <li>Check public transport/boat operators</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <h3 class="contact-subheading">Stay Connected</h3>
+                        <ul class="contact-list">
+                            <li>Newsletter signup: info@onewherobay.org.nz</li>
+                            <li>Follow our social channels for updates</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="social-button-container">
+                    <button class="social-button">Follow Our Journey On Social Media</button>
+                </div>
+            </div>
+        </div>
         
-        @* Three Content Boxes *@
-        <div class="content-boxes-container">
-            @* Box 1 - About Us *@
-            <div class="content-box">
-                <h3 class="box-heading">About Us</h3>
-                <p class="box-content">Discover what makes Onewhero Bay one of Northland's most unique new destinations. Visitors come to enjoy its natural beauty. For the time being, the bay is only reachable by water, preserving a sense of wildness and quiet that is often lost in more developed areas. This makes it an attractive destination for boaters and those seeking a private escape.</p>
-                    <button class="content-button" @onclick="NavigateToAbout">Find Out More</button>
-            </div>
-            
-            @* Box 2 - Events *@
-            <div class="content-box">
-                <h3 class="box-heading">Events</h3>
-                <p class="box-content">Join us for exclusive events that celebrate adventure, community, and conservation. We have Our Kayak Challenge. a thrilling multi-stage race across the bay's pristine waters, our Artisanal Food Festival, a gourmet, zero-waste celebration of local Northland flavours and Conservation Day, A hands-on day of beach care, native planting, and expert talks.</p>
-                        <button class="content-button" @onclick="NavigateToEvents">Explore Events</button>
-            </div>
-            
-            @* Box 3 - Location *@
-            <div class="content-box">
-                <h3 class="box-heading">Location</h3>
-                <p class="box-content">Onewhero Bay is located on the Northland Region of New Zealand, facing Moturoa Island at the entrance to the Bay of Islands. It is a long stretch of sand surrounded by private farmland, making it accessible only by sea. For our full location details and contact information please click the contact us link below.</p>
-                <button class="content-button" @onclick="NavigateToContact">Contact Us</button>
+        @* How to reach us - Bottom Section with Map *@
+        <div class="contact-section">
+            <div class="contact-content-box">
+                <h2 class="contact-heading">How to reach us</h2>
+                
+                <div class="address-map-container">
+                    <div class="address-column">
+                        <h3 class="address-heading">Address</h3>
+                        <div class="address-details">
+                            <p>12 Harbour Street</p>
+                            <p>Paihia</p>
+                            <p>Bay of Islands</p>
+                            <p>Northland</p>
+                            <p>New Zealand</p>
+                        </div>
+                    </div>
+                    
+                    <div class="map-column">
+                        <img src="Map.png" alt="Map showing Onewhero Bay location" class="map-image" />
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -170,98 +251,139 @@
         margin-bottom: 40px;
     }
 
-    /* Discover Section */
-    .discover-section {
+    /* Contact Sections */
+    .contact-section {
         display: flex;
         justify-content: center;
-        margin-bottom: 60px;
-    }
-
-    .discover-content-box {
-        background-color: #1E5167;
-        width: 100%;
-        max-width: min(1531px, 95vw);
-        min-height: 74px;
-        border-radius: 25px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 15px 20px;
-    }
-
-    .discover-text {
-        font-size: clamp(16px, 2.5vw, 22px);
-        font-weight: normal;
-        margin: 0;
-        text-align: center;
-    }
-
-    /* Special Heading - Self-Adjusting Typography */
-    .special-heading {
-        font-size: clamp(20px, 3.5vw, 36px);
-        font-weight: bold;
-        letter-spacing: 0.08em;
-        text-align: center;
         margin-bottom: 40px;
     }
 
-    /* Content Boxes Container - Self-Adjusting Grid */
-    .content-boxes-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 27px;
-        justify-items: center;
-        max-width: 1200px;
-        margin: 0 auto 60px auto;
-    }
-
-    /* Individual Content Box - Self-Adjusting */
-    .content-box {
+    .contact-content-box {
         background-color: #1E5167;
         width: 100%;
-        max-width: min(491px, 90vw);
-        height: auto;
-        min-height: 400px;
+        max-width: min(1400px, 95vw);
         border-radius: 25px;
-        padding: 30px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        padding: 40px;
     }
 
-    .box-heading {
+    .contact-heading {
         font-size: clamp(20px, 3vw, 28px);
         font-weight: bold;
         letter-spacing: 0.08em;
         margin: 0 0 20px 0;
+        text-align: left;
     }
 
-    .box-content {
+    .contact-text {
         font-size: clamp(16px, 2vw, 21px);
         font-weight: normal;
         line-height: 1.4;
-        flex-grow: 1;
-        margin: 0 0 20px 0;
+        margin: 0;
     }
 
-    .content-button {
+    /* Contact Information Grid */
+    .contact-info-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-bottom: 30px;
+    }
+
+    .contact-info-item {
+        margin-bottom: 20px;
+    }
+
+    .contact-subheading {
+        font-size: clamp(16px, 2.2vw, 20px);
+        font-weight: bold;
+        margin: 0 0 10px 0;
+        color: white;
+    }
+
+    .contact-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .contact-list li {
+        font-size: clamp(14px, 1.8vw, 18px);
+        line-height: 1.4;
+        margin-bottom: 5px;
+        padding-left: 0;
+    }
+
+    .contact-list li:before {
+        content: "• ";
+        color: white;
+        font-weight: bold;
+    }
+
+    /* Social Button */
+    .social-button-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+    }
+
+    .social-button {
         background-color: #3A7A9A;
-        width: min(228px, 80%);
-        height: min(60.59px, 8vh);
+        width: min(350px, 80%);
+        height: min(60px, 8vh);
         border-radius: 9.73px;
         border: none;
         color: white;
-        font-size: clamp(14px, 2vw, 19.47px);
+        font-size: clamp(14px, 2vw, 18px);
         font-weight: bold;
         text-align: center;
         cursor: pointer;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        align-self: center;
+        transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
-    .content-button:hover {
+    .social-button:hover {
         background-color: #2d5f7a;
         transform: translateY(-1px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Address and Map Container */
+    .address-map-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: start;
+    }
+
+    .address-column {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .address-heading {
+        font-size: clamp(18px, 2.5vw, 22px);
+        font-weight: bold;
+        margin: 0 0 20px 0;
+        color: white;
+    }
+
+    .address-details p {
+        font-size: clamp(16px, 2vw, 20px);
+        line-height: 1.6;
+        margin: 0 0 8px 0;
+    }
+
+    .map-column {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .map-image {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        border-radius: 15px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     }
 
@@ -413,7 +535,7 @@
         background-color: rgba(255, 255, 255, 0.1);
     }
 
-    /* Keyframes moved to custom.css */
+    /* Responsive Design for Address/Map - moved to custom.css */
 </style>
 
 @code {
@@ -434,27 +556,26 @@
     private void NavigateToHome()
     {
         CloseMenu();
-        // Navigation logic for Homepage
+        NavigationManager.NavigateTo("/");
     }
 
     private void NavigateToEvents()
     {
         CloseMenu();
-        // Navigate to Events page
         NavigationManager.NavigateTo("/events");
     }
 
-        private void NavigateToContact()
-        {
-            CloseMenu();
-            NavigationManager.NavigateTo("/contactus");
-        }
+    private void NavigateToContact()
+    {
+        CloseMenu();
+        // Already on Contact Us page
+    }
 
-        private void NavigateToAbout()
-        {
-            CloseMenu();
-            NavigationManager.NavigateTo("/aboutus");
-        }
+    private void NavigateToAbout()
+    {
+        CloseMenu();
+        NavigationManager.NavigateTo("/aboutus");
+    }
 
     private void NavigateToBooking()
     {
@@ -480,9 +601,9 @@
         // Navigation logic for Sign Up
     }
 
-        private void NavigateToSignOut()
-        {
-            CloseMenu();
-            // Navigation logic for Sign Out
-        }
+    private void NavigateToSignOut()
+    {
+        CloseMenu();
+        // Navigation logic for Sign Out
+    }
 }

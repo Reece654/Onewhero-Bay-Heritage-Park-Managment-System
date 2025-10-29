@@ -48,6 +48,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xWaXNpdG9yRm9ybS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/reece_hbdfrup/source/repos/Onewhero Bay Heritage Park Managment System/Client/Pages/About.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWJvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/reece_hbdfrup/source/repos/Onewhero Bay Heritage Park Managment System/Client/Pages/AboutUs.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWJvdXRVcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/reece_hbdfrup/source/repos/Onewhero Bay Heritage Park Managment System/Client/Pages/Admin.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW4ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
@@ -60,8 +68,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQm9va2luZ3MucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/reece_hbdfrup/source/repos/Onewhero Bay Heritage Park Managment System/Client/Pages/ContactUs.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udGFjdFVzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/reece_hbdfrup/source/repos/Onewhero Bay Heritage Park Managment System/Client/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/reece_hbdfrup/source/repos/Onewhero Bay Heritage Park Managment System/Client/Pages/EventConservationDay.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXZlbnRDb25zZXJ2YXRpb25EYXkucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/reece_hbdfrup/source/repos/Onewhero Bay Heritage Park Managment System/Client/Pages/EventDetail.razor]

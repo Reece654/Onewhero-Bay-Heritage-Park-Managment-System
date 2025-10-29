@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Onewhero Bay Heritage Park Managment System.Client")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+00d3acc063def87c51c42f961c7e65224b4c5aea")]
 [assembly: System.Reflection.AssemblyProductAttribute("Onewhero Bay Heritage Park Managment System.Client")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Onewhero Bay Heritage Park Managment System.Client")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,4 +1,4 @@
-@page "/"
+@page "/event-conservation-day"
 
 @* Header Section - Background image with centered logo *@
 <header class="header-section">
@@ -8,9 +8,9 @@
         <img src="HamburgerMenuW.png" alt="Menu" class="hamburger-icon" />
     </div>
     
-            <div class="header-logo-container" @onclick="NavigateToHome">
-                <img src="BayLogoWhite.PNG" alt="Onewhero Bay Heritage Park Logo" class="header-logo" />
-            </div>
+    <div class="header-logo-container" @onclick="NavigateToHome">
+        <img src="BayLogoWhite.PNG" alt="Onewhero Bay Heritage Park Logo" class="header-logo" />
+    </div>
 </header>
 
 @* Hamburger Menu Overlay *@
@@ -42,40 +42,36 @@
 @* Main Content Area *@
 <main class="main-content">
     <div class="container">
-        @* Welcome Heading *@
-        <h1 class="welcome-heading">WELCOME TO ONEWHERO BAY HERITAGE PARK</h1>
+        @* Conservation Day Heading *@
+        <h1 class="conservation-heading">ONEWHERO BAY CONSERVATION DAY</h1>
         
-        @* Discover Section with Content Box *@
-        <div class="discover-section">
-            <div class="discover-content-box">
-                <p class="discover-text">Discover the beauty and tranquility of Onewhero Bay, a newly established public space in the heart of Northland's Bay of Islands.</p>
+        @* Subtitle Section with Content Box *@
+        <div class="subtitle-section">
+            <div class="subtitle-content-box">
+                <p class="subtitle-text">Community-focused day of conservation work and environmental education</p>
             </div>
         </div>
         
-        @* What Makes Special Heading *@
-        <h2 class="special-heading">What makes Onewhero Bay Special</h2>
+        @* What to Know Heading *@
+        <h2 class="special-heading">What to know</h2>
         
-        @* Three Content Boxes *@
-        <div class="content-boxes-container">
-            @* Box 1 - About Us *@
-            <div class="content-box">
-                <h3 class="box-heading">About Us</h3>
-                <p class="box-content">Discover what makes Onewhero Bay one of Northland's most unique new destinations. Visitors come to enjoy its natural beauty. For the time being, the bay is only reachable by water, preserving a sense of wildness and quiet that is often lost in more developed areas. This makes it an attractive destination for boaters and those seeking a private escape.</p>
-                    <button class="content-button" @onclick="NavigateToAbout">Find Out More</button>
-            </div>
-            
-            @* Box 2 - Events *@
-            <div class="content-box">
-                <h3 class="box-heading">Events</h3>
-                <p class="box-content">Join us for exclusive events that celebrate adventure, community, and conservation. We have Our Kayak Challenge. a thrilling multi-stage race across the bay's pristine waters, our Artisanal Food Festival, a gourmet, zero-waste celebration of local Northland flavours and Conservation Day, A hands-on day of beach care, native planting, and expert talks.</p>
-                        <button class="content-button" @onclick="NavigateToEvents">Explore Events</button>
-            </div>
-            
-            @* Box 3 - Location *@
-            <div class="content-box">
-                <h3 class="box-heading">Location</h3>
-                <p class="box-content">Onewhero Bay is located on the Northland Region of New Zealand, facing Moturoa Island at the entrance to the Bay of Islands. It is a long stretch of sand surrounded by private farmland, making it accessible only by sea. For our full location details and contact information please click the contact us link below.</p>
-                <button class="content-button" @onclick="NavigateToContact">Contact Us</button>
+        @* Event Details Section *@
+        <div class="event-details-section">
+            <div class="event-details-content">
+                <div class="event-details-container">
+                    <div class="event-details-text">
+                        <h3 class="event-name-heading">Conservation Day</h3>
+                        <p class="event-intro-text">A community event focused on preserving the bay's environment, suitable for all ages.</p>
+                        <p class="event-details">Volunteers would be ferried to the bay to help with a variety of conservation efforts, such as beach cleanups, native planting, and ecological surveys. Unique feature: Expert talks are held throughout the day on topics like local marine life, seabird ecology, and responsible boating practices. This would transform the event from a simple cleanup into an educational opportunity, there is also free food for the volunteers.</p>
+                    </div>
+                    <div class="event-image-container">
+                        <img src="BayofIslandsKayaking.jpg" alt="Bay of Islands Kayaking" class="event-image" />
+                    </div>
+                </div>
+                
+                <div class="book-now-container">
+                    <button class="book-now-button">Book Now</button>
+                </div>
             </div>
         </div>
     </div>
@@ -106,6 +102,7 @@
 </footer>
 
 <style>
+    /* Reuse all existing styles from Index.razor and Events.razor */
     .header-section {
         position: relative;
         width: 100%;
@@ -160,8 +157,8 @@
         padding: 60px 0;
     }
 
-    /* Welcome Heading - Self-Adjusting Typography */
-    .welcome-heading {
+    /* Conservation Day Heading */
+    .conservation-heading {
         font-size: clamp(24px, 4vw, 36px);
         font-weight: bold;
         text-transform: uppercase;
@@ -170,17 +167,17 @@
         margin-bottom: 40px;
     }
 
-    /* Discover Section */
-    .discover-section {
+    /* Subtitle Section */
+    .subtitle-section {
         display: flex;
         justify-content: center;
         margin-bottom: 60px;
     }
 
-    .discover-content-box {
+    .subtitle-content-box {
         background-color: #1E5167;
         width: 100%;
-        max-width: min(1531px, 95vw);
+        max-width: min(1316px, 90vw);
         min-height: 74px;
         border-radius: 25px;
         display: flex;
@@ -189,14 +186,29 @@
         padding: 15px 20px;
     }
 
-    .discover-text {
+    .subtitle-text {
         font-size: clamp(16px, 2.5vw, 22px);
         font-weight: normal;
         margin: 0;
         text-align: center;
     }
 
-    /* Special Heading - Self-Adjusting Typography */
+    /* Event Details Section */
+    .event-details-section {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 60px;
+    }
+
+    .event-details-content {
+        background-color: #1E5167;
+        width: 100%;
+        max-width: min(1400px, 95vw);
+        border-radius: 25px;
+        padding: 40px;
+    }
+
+    /* What to Know Heading - Reuse special-heading class */
     .special-heading {
         font-size: clamp(20px, 3.5vw, 36px);
         font-weight: bold;
@@ -205,67 +217,98 @@
         margin-bottom: 40px;
     }
 
-    /* Content Boxes Container - Self-Adjusting Grid */
-    .content-boxes-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 27px;
-        justify-items: center;
-        max-width: 1200px;
-        margin: 0 auto 60px auto;
-    }
-
-    /* Individual Content Box - Self-Adjusting */
-    .content-box {
-        background-color: #1E5167;
-        width: 100%;
-        max-width: min(491px, 90vw);
-        height: auto;
-        min-height: 400px;
-        border-radius: 25px;
-        padding: 30px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-
-    .box-heading {
-        font-size: clamp(20px, 3vw, 28px);
+    .event-name-heading {
+        font-size: clamp(18px, 2.5vw, 24px);
         font-weight: bold;
         letter-spacing: 0.08em;
-        margin: 0 0 20px 0;
+        margin: 0 0 15px 0;
     }
 
-    .box-content {
+    .event-intro-text {
+        font-size: clamp(16px, 2vw, 20px);
+        font-weight: normal;
+        margin: 0 0 30px 0;
+        line-height: 1.4;
+    }
+
+    /* Event Details Container - Side by side layout */
+    .event-details-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        align-items: start;
+        margin-bottom: 40px;
+        align-content: start;
+    }
+
+    .event-details-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .event-name-heading {
+        margin: 0 0 15px 0;
+    }
+
+    .event-intro-text {
+        margin: 0 0 20px 0;
+        line-height: 1.4;
+    }
+
+    .event-details {
         font-size: clamp(16px, 2vw, 21px);
         font-weight: normal;
         line-height: 1.4;
-        flex-grow: 1;
-        margin: 0 0 20px 0;
+        margin: 0;
     }
 
-    .content-button {
+    .event-image-container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        margin-top: calc(1.2em + 15px + 0.2em);
+        padding-top: 0;
+        align-self: start;
+    }
+
+    .event-image {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        border-radius: 15px;
+        object-fit: cover;
+    }
+
+    /* Book Now Button */
+    .book-now-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .book-now-button {
         background-color: #3A7A9A;
-        width: min(228px, 80%);
-        height: min(60.59px, 8vh);
+        width: min(200px, 80%);
+        height: min(60px, 8vh);
         border-radius: 9.73px;
         border: none;
         color: white;
-        font-size: clamp(14px, 2vw, 19.47px);
+        font-size: clamp(16px, 2vw, 20px);
         font-weight: bold;
         text-align: center;
         cursor: pointer;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        align-self: center;
+        transition: all 0.3s ease;
     }
 
-    .content-button:hover {
+    .book-now-button:hover {
         background-color: #2d5f7a;
         transform: translateY(-1px);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     }
 
-    /* Footer Section */
+    /* Footer Section - Reuse existing classes */
     .footer-section {
         background-color: #1E5167;
         width: 100%;
@@ -304,7 +347,7 @@
         font-size: 14px;
     }
 
-    /* Hamburger Menu Button */
+    /* Hamburger Menu Button - Reuse existing classes */
     .hamburger-button {
         position: absolute;
         top: 20px;
@@ -326,7 +369,7 @@
         filter: brightness(0) invert(1);
     }
 
-    /* Hamburger Menu Overlay */
+    /* Hamburger Menu Overlay - Reuse existing classes */
     .hamburger-menu-overlay {
         position: fixed;
         top: 0;
@@ -413,7 +456,9 @@
         background-color: rgba(255, 255, 255, 0.1);
     }
 
-    /* Keyframes moved to custom.css */
+    /* Responsive Design for smaller screens - moved to custom.css */
+
+    /* Animation keyframes moved to custom.css */
 </style>
 
 @code {
@@ -434,13 +479,12 @@
     private void NavigateToHome()
     {
         CloseMenu();
-        // Navigation logic for Homepage
+        NavigationManager.NavigateTo("/");
     }
 
     private void NavigateToEvents()
     {
         CloseMenu();
-        // Navigate to Events page
         NavigationManager.NavigateTo("/events");
     }
 
@@ -450,11 +494,11 @@
             NavigationManager.NavigateTo("/contactus");
         }
 
-        private void NavigateToAbout()
-        {
-            CloseMenu();
-            NavigationManager.NavigateTo("/aboutus");
-        }
+    private void NavigateToAbout()
+    {
+        CloseMenu();
+        // Navigation logic for About Us
+    }
 
     private void NavigateToBooking()
     {
@@ -480,9 +524,9 @@
         // Navigation logic for Sign Up
     }
 
-        private void NavigateToSignOut()
-        {
-            CloseMenu();
-            // Navigation logic for Sign Out
-        }
+    private void NavigateToSignOut()
+    {
+        CloseMenu();
+        // Navigation logic for Sign Out
+    }
 }
