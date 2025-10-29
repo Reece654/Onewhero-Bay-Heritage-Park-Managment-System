@@ -1,0 +1,88 @@
+@page "/"
+@using Onewhero_Bay_Heritage_Park_Managment_System.Client.Services
+@inject SupabaseService SupabaseService
+
+<h2>Welcome to Onewhero Bay Heritage Park</h2>
+
+<p>Discover the beauty and heritage of New Zealand's Northland region.</p>
+
+@* Navigation links to main sections of the app *@
+<p><a href="/login">Login</a> | <a href="/register">Register</a> | <a href="/events">Events</a> | <a href="/analytics">Analytics</a></p>
+
+@* Supabase Connection Test Section *@
+<div class="mt-4 p-3 border rounded">
+    <h3>Database Connection Test</h3>
+    <p>Test the connection to our Supabase database:</p>
+    
+    @if (isTesting)
+    {
+        <div class="text-info">
+            <i class="fas fa-spinner fa-spin"></i> Testing connection...
+        </div>
+    }
+    else if (connectionStatus.HasValue)
+    {
+        @if (connectionStatus.Value)
+        {
+            <div class="text-success">
+                <i class="fas fa-check-circle"></i> Database connection successful!
+            </div>
+        }
+        else
+        {
+            <div class="text-danger">
+                <i class="fas fa-exclamation-circle"></i> Database connection failed. Please check your configuration.
+                @if (!string.IsNullOrEmpty(errorMessage))
+                {
+                    <br><small>@errorMessage</small>
+                }
+            </div>
+        }
+    }
+    
+    <button class="btn btn-primary mt-2" @onclick="TestConnection" disabled="@isTesting">
+        @if (isTesting)
+        {
+            <span>Testing...</span>
+        }
+        else
+        {
+            <span>Test Connection</span>
+        }
+    </button>
+</div>
+
+@code {
+    private bool? connectionStatus = null;
+    private bool isTesting = false;
+    private string errorMessage = "";
+
+    private async Task TestConnection()
+    {
+        isTesting = true;
+        connectionStatus = null;
+        errorMessage = "";
+        StateHasChanged();
+
+        try
+        {
+            var result = await SupabaseService.TestConnectionAsync();
+            connectionStatus = result;
+            if (!result)
+            {
+                errorMessage = "Connection failed - check console for details";
+            }
+        }
+        catch (Exception ex)
+        {
+            connectionStatus = false;
+            errorMessage = $"Error: {ex.Message}";
+            Console.WriteLine($"Connection test error: {ex.Message}");
+        }
+        finally
+        {
+            isTesting = false;
+            StateHasChanged();
+        }
+    }
+}
